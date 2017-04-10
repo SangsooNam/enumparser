@@ -19,7 +19,7 @@ dependencies {
 
 ext {
     PUBLISH_GROUP_ID = 'io.github.sangsoonam'
-    PUBLISH_VERSION = '0.1.0'
+    PUBLISH_VERSION = '0.1.1'
 }
 
 task sourceJar(type: Jar) {

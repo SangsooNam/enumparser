@@ -42,7 +42,7 @@ public final class EnumParser<T extends Enum<T>> {
      * @param variation variation function
      * @return EnumParser
      */
-    public EnumParser<T> withVariation(Function<Enum<T>, String> variation) {
+    public EnumParser<T> withVariation(Function<T, String> variation) {
         for (T enumConstant : mEnumConstants) {
             mMapping.put(toUpperCase(variation.apply(enumConstant)), enumConstant);
         }
