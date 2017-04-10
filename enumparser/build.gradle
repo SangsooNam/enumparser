@@ -9,3 +9,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
     testCompile 'org.assertj:assertj-core:2.6.0'
 }
+
+group = 'io.github.sangsoonam'
+version = '0.1.0'
