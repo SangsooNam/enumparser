@@ -1,8 +1,8 @@
 package io.github.sangsoonam.enumparser;
 
-import org.junit.Test;
+import com.google.common.base.Function;
 
-import java.util.function.Function;
+import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
