@@ -1,10 +1,10 @@
 package io.github.sangsoonam.enumparser;
 
+import com.google.common.base.Function;
 import com.google.common.collect.Maps;
 
 import java.util.Locale;
 import java.util.Map;
-import java.util.function.Function;
 
 /**
  * Utility for parsing a string to Enum constant. This is case insensitive.
