@@ -6,15 +6,9 @@ plugins {
 apply plugin: 'java'
 apply plugin: 'maven-publish'
 apply plugin: "jacoco"
-apply plugin: 'com.updateimpact.updateimpact'
 
 sourceCompatibility = JavaVersion.VERSION_1_7
 targetCompatibility = JavaVersion.VERSION_1_7
-
-updateImpactSubmit {
-    apiKey = "$System.env.UPDATEIMPACT_API_KEY"
-    openBrowser = true
-}
 
 dependencies {
     compile 'com.google.guava:guava:11.0.1'
