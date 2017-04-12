@@ -25,11 +25,38 @@ dependencies {
 
 ext {
     PUBLISH_GROUP_ID = 'io.github.sangsoonam'
-    PUBLISH_VERSION = '0.1.1'
+    PUBLISH_VERSION = '0.1.2'
+}
+
+
+task javadocJar (type: Jar, dependsOn: javadoc) {
+    classifier "sources"
+    from javadoc.destinationDir
 }
 
 task sourceJar(type: Jar) {
+    classifier "javadoc"
     from sourceSets.main.allJava
+}
+
+def pomConfig = {
+    description('Utility for parsing a string to Enum constant.'){}
+    name 'enumparser'
+    url 'https://github.com/SangsooNam/enumparser'
+    licenses {
+        license {
+            name 'MIT License'
+            url 'http://www.opensource.org/licenses/mit-license.php'
+        }
+    }
+    scm {
+        url 'https://github.com/SangsooNam/enumparser'
+    }
+    developers {
+        developer {
+            name 'Sangsoo Nam'
+        }
+    }
 }
 
 publishing {
@@ -39,8 +66,11 @@ publishing {
             groupId = PUBLISH_GROUP_ID
             version = PUBLISH_VERSION
 
-            artifact sourceJar {
-                classifier "sources"
+            artifact sourceJar
+            artifact javadocJar
+
+            pom.withXml {
+                asNode().children().last() + pomConfig
             }
         }
     }
@@ -53,6 +83,7 @@ bintray {
     pkg {
         repo = 'enumparser'
         name = 'enumparser'
+
         version {
             name = 'v' + PUBLISH_VERSION
             released  = new Date()
