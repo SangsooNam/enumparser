@@ -1,6 +1,7 @@
 ## EnumParser
 [![Build Status](https://travis-ci.org/SangsooNam/enumparser.svg?branch=master)](https://travis-ci.org/SangsooNam/enumparser)
 [![Coverage Status](https://coveralls.io/repos/github/SangsooNam/enumparser/badge.svg?branch=master)](https://coveralls.io/github/SangsooNam/enumparser?branch=master)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.sangsoonam/enumparser/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.sangsoonam/enumparser)
 
 This is a utility for parsing a string to Enum constant. One common case is to parse a JSON data returned from a backend. In that case, you might want to convert it to Enum because writing below code in many places could bring a mistake because of a typo error.
 ```java
