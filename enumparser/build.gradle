@@ -20,6 +20,10 @@ dependencies {
 ext {
     PUBLISH_GROUP_ID = 'io.github.sangsoonam'
     PUBLISH_VERSION = '0.1.3'
+    PUBLISH_ARTIFACT_ID = 'enumparser'
+    PUBLISH_DESCRIPTION = 'Utility for parsing a string to Enum constant.'
+    GITHUB_URL = 'https://github.com/SangsooNam/enumparser'
+    DEVELOPER_NAME = 'Sangsoo Nam'
 }
 
 
@@ -34,9 +38,9 @@ task sourceJar(type: Jar) {
 }
 
 def pomConfig = {
-    description('Utility for parsing a string to Enum constant.'){}
-    name 'enumparser'
-    url 'https://github.com/SangsooNam/enumparser'
+    description(PUBLISH_DESCRIPTION){}
+    name PUBLISH_ARTIFACT_ID
+    url GITHUB_URL
     licenses {
         license {
             name 'MIT License'
@@ -44,11 +48,11 @@ def pomConfig = {
         }
     }
     scm {
-        url 'https://github.com/SangsooNam/enumparser'
+        url GITHUB_URL
     }
     developers {
         developer {
-            name 'Sangsoo Nam'
+            name DEVELOPER_NAME
         }
     }
 }
@@ -76,8 +80,8 @@ bintray {
     publications = ['MyPublication']
     publish = true
     pkg {
-        repo = 'enumparser'
-        name = 'enumparser'
+        repo = PUBLISH_ARTIFACT_ID
+        name = PUBLISH_ARTIFACT_ID
 
         version {
             name = 'v' + PUBLISH_VERSION
