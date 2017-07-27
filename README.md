@@ -73,7 +73,7 @@ Function<ModeWithKey, String> customKeyVariation = new Function<ModeWithKey, Str
     return testEnum.getKey();
   }
 };
-EnumParser<ModeWithKey> enumParser = EnumParser.forClass(ModeWithKey).withVariation(customKeyVariation);
+EnumParser<ModeWithKey> enumParser = EnumParser.forClass(ModeWithKey.class).withVariation(customKeyVariation);
 assertEquals(Mode.PLAY, enumParser.parse("music:play"));
 ```
 
