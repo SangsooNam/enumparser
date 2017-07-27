@@ -25,7 +25,7 @@ Mode mode = Mode.valueOf(modeString);
 It works well in most cases. However, there are two problems. First, it is a case sensitive. If `modeString` is `play`, it returns `null` instead of `PLAY`. EnumParser support a case insensitive mapping. Thus, belows will match the same enum constant `PLAY`.
 
 ```java
-EnumParser<Mode> parser = EnumParser.forClass(Mode.clasS);
+EnumParser<Mode> parser = EnumParser.forClass(Mode.class);
 assertEquals(Mode.PLAY, parser.parser("play"));
 assertEquals(Mode.PLAY, parser.parser("Play"));
 assertEquals(Mode.PLAY, parser.parser("PLAY"));
@@ -62,7 +62,8 @@ Function<Mode, String> dashVariation = new Function<Mode, String>() {
     return testEnum.name().replaceAll("_", "-");
   }
 };
-EnumParser<Mode> enumParser = EnumParser.forClass(Mode).withVariation(dashVariation);
+EnumParser<Mode> enumParser = EnumParser.for
+(Mode).withVariation(dashVariation);
 assertEquals(Mode.SHUFFLE_PLAY, enumParser.parse("shuffle-play"));
 ```
 ```java
