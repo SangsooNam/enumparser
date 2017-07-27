@@ -62,8 +62,7 @@ Function<Mode, String> dashVariation = new Function<Mode, String>() {
     return testEnum.name().replaceAll("_", "-");
   }
 };
-EnumParser<Mode> enumParser = EnumParser.for
-(Mode).withVariation(dashVariation);
+EnumParser<Mode> enumParser = EnumParser.forClass(Mode.class).withVariation(dashVariation);
 assertEquals(Mode.SHUFFLE_PLAY, enumParser.parse("shuffle-play"));
 ```
 ```java
