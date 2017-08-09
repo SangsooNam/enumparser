@@ -28,12 +28,12 @@ ext {
 
 
 task javadocJar (type: Jar, dependsOn: javadoc) {
-    classifier "sources"
+    classifier "javadoc"
     from javadoc.destinationDir
 }
 
 task sourceJar(type: Jar) {
-    classifier "javadoc"
+    classifier "sources"
     from sourceSets.main.allJava
 }
 
